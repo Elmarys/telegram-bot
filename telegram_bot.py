@@ -32,7 +32,7 @@ def currencies(message):
 
 
 @bot.message_handler(content_types=['text'])
-def currencies(message):
+def convert(message):
     quote, base, amount = message.text.split(' ')
     r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={keys[quote]}&tsyms={keys[base]}')
     global_base = json.loads(r.content)[keys[base]]
