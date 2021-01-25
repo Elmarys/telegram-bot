@@ -27,6 +27,6 @@ class CriptoConverter():
 
         r = requests.get(f'https://api.exchangeratesapi.io/latest?base={base_ticker}&symbols={quote_ticker}')
         global_base = json.loads(r.content)['rates'][keys[quote]]
-        res = global_base * int(amount)
+        res = round(global_base * int(amount), 4)
 
         return res
