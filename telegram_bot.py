@@ -40,6 +40,7 @@ def convert(message):
     else:
         text = f'Цена {amount} {keys[base]} в {keys[quote]} - {res}'
         bot.send_message(message.chat.id, text)
+        print(message.chat.first_name)
 
 
 bot.polling(none_stop=True)
