@@ -33,6 +33,7 @@ def convert(message):
 
         base, quote, amount = values
         res = CriptoConverter.convert(quote, base, amount)
+        res = '{:,}'.format(res).replace(',', ' ') # форматируем результат, отделяя разряды
     except ConvertionError as e:
         bot.reply_to(message, f'Ошибка пользователя\n{e}')
     except Exception as e:
